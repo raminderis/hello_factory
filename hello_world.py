@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A simple Hello World program."""
+"""A simple Hello World script."""
 
 def main():
     """Print Hello, World! to the console."""
