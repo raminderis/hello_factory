@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Hello World Program
+Hello World Script
 
-A simple script that prints 'Hello, World!' to the console.
+A simple Python script that prints 'Hello, World!' to the console.
 """
 
 def main():
