@@ -1,74 +1,96 @@
-# Positive Integer Addition Application
+# Simple Calculator Application
 
-A simple Python application that takes two positive integers as input and adds them together.
+A simple Python application that takes two positive integers as input and displays their sum.
 
 ## Features
 
-- Takes two positive integer inputs from the user
-- Validates that inputs are positive integers (greater than 0)
-- Adds the two numbers together and displays the result
-- Error handling for invalid inputs
-- User-friendly prompts and output
+- Addition of two positive integers
+- Input validation to ensure only positive integers are accepted
+- User-friendly error messages
+- Interactive command-line interface
 
 ## Requirements
 
 - Python 3.6 or higher
 
+## Project Structure
+
+```
+.
+├── main.py          # Main entry point of the application
+├── calculator.py    # Module containing arithmetic operations
+├── utils.py         # Utility functions for input validation
+└── README.md        # This file
+```
+
 ## How to Run
 
-1. Make sure you have Python 3 installed on your system:
+1. Make sure you have Python 3.6+ installed on your system:
    ```bash
-   python3 --version
+   python --version
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd path/to/project
+   cd /path/to/project
    ```
 
 3. Run the application:
    ```bash
-   python3 main.py
+   python main.py
    ```
 
-   Or make the file executable and run it directly:
-   ```bash
-   chmod +x main.py
-   ./main.py
-   ```
+4. Follow the prompts to enter two positive integers
 
 ## Usage Example
 
 ```
-=== Positive Integer Addition ===
-This program adds two positive integers together.
+$ python main.py
+Simple Calculator - Addition of Two Positive Integers
+==================================================
+Enter the first positive integer: 42
+Enter the second positive integer: 58
 
-Enter the first positive integer: 25
-Enter the second positive integer: 17
-
-Result: 25 + 17 = 42
+Result: 42 + 58 = 100
 ```
 
 ## Input Validation
 
-The application validates user input and will:
-- Reject non-integer values
-- Reject zero or negative numbers
-- Continue prompting until valid positive integers are provided
+The application validates that:
+- Both inputs are integers (not strings, floats, or other types)
+- Both integers are positive (greater than 0)
+- Invalid inputs will prompt the user to try again
 
-## Code Structure
+## Module Documentation
 
-- `add_numbers(a, b)`: Function that adds two positive integers
-- `get_positive_integer(prompt)`: Function that gets and validates user input
-- `main()`: Main function that orchestrates the application flow
+### calculator.py
+
+Contains the `add(a, b)` function that:
+- Takes two positive integers as parameters
+- Validates the inputs
+- Returns their sum
+
+### utils.py
+
+Contains utility functions:
+- `validate_positive_integer(value, name)`: Validates that a value is a positive integer
+- `get_positive_integer_input(prompt)`: Gets validated positive integer input from the user
+
+### main.py
+
+The main entry point that:
+- Prompts the user for two positive integers
+- Calls the add function from calculator module
+- Displays the result
 
 ## Error Handling
 
-The application handles the following error cases:
+The application handles various error scenarios:
 - Non-numeric input
-- Zero or negative values
-- Non-integer values
+- Negative numbers
+- Zero
+- Keyboard interrupts (Ctrl+C)
 
 ## License
 
-This project is open source and available for educational purposes.
+This project is provided as-is for educational purposes.

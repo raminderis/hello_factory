@@ -1,59 +1,78 @@
 #!/usr/bin/env python3
-"""Main application file that takes two positive integers as input and adds them together."""
+"""Main entry point for the calculator application."""
+
+import builtins
 
 
 def add_numbers(a, b):
     """Add two positive integers together.
     
     Args:
-        a (int): First positive integer
-        b (int): Second positive integer
-        
+        a: First positive integer
+        b: Second positive integer
+    
     Returns:
         int: Sum of a and b
-        
+    
     Raises:
-        ValueError: If inputs are not positive integers
+        ValueError: If either argument is not a positive integer or invalid type
     """
-    if not isinstance(a, int) or not isinstance(b, int):
-        raise ValueError("Both inputs must be integers")
-    if a <= 0 or b <= 0:
-        raise ValueError("Both inputs must be positive integers")
+    # Validate types and values
+    if not isinstance(a, int) or isinstance(a, bool):
+        raise ValueError(f"First argument must be a positive integer")
+    if not isinstance(b, int) or isinstance(b, bool):
+        raise ValueError(f"Second argument must be a positive integer")
+    
+    if a <= 0:
+        raise ValueError(f"First argument must be a positive integer")
+    if b <= 0:
+        raise ValueError(f"Second argument must be a positive integer")
+    
     return a + b
 
 
 def get_positive_integer(prompt):
-    """Get a positive integer from user input.
+    """Get a positive integer from user input with validation.
     
     Args:
-        prompt (str): Prompt message to display
-        
+        prompt (str): The prompt message to display to the user
+    
     Returns:
-        int: Valid positive integer from user
+        int: A valid positive integer from user input
     """
     while True:
         try:
-            value = int(input(prompt))
+            user_input = input(prompt)
+            value = int(user_input)
+            
             if value <= 0:
-                print("Please enter a positive integer (greater than 0).")
+                print("Error: Please enter a positive integer.")
                 continue
+            
             return value
         except ValueError:
-            print("Invalid input. Please enter a valid integer.")
+            print("Error: Invalid input. Please enter a valid integer.")
+        except KeyboardInterrupt:
+            print("\n\nOperation cancelled by user.")
+            exit(0)
 
 
 def main():
-    """Main function to run the application."""
-    print("=== Positive Integer Addition ===")
-    print("This program adds two positive integers together.\n")
+    """Main function that takes two positive integers as input and displays their sum."""
+    print("Positive Integer Addition")
+    print("=" * 50)
     
-    # Get two positive integers from user
+    # Get first positive integer
     num1 = get_positive_integer("Enter the first positive integer: ")
+    
+    # Get second positive integer
     num2 = get_positive_integer("Enter the second positive integer: ")
     
-    # Calculate and display result
+    # Calculate sum
     result = add_numbers(num1, num2)
-    print(f"\nResult: {num1} + {num2} = {result}")
+    
+    # Display result
+    print(f"\n{num1} + {num2} = {result}")
 
 
 if __name__ == "__main__":
