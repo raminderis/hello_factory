@@ -1,96 +1,96 @@
-# Simple Calculator Application
+# Integer Difference Calculator
 
-A simple Python application that takes two positive integers as input and displays their sum.
+A simple Python application that calculates the difference between two integers.
 
-## Features
+## Project Structure
 
-- Addition of two positive integers
-- Input validation to ensure only positive integers are accepted
-- User-friendly error messages
-- Interactive command-line interface
+- `main.py` - Main entry point that takes two integers as input and displays the difference
+- `calculator.py` - Module containing the function to calculate the difference between two integers
+- `test_calculator.py` - Unit tests for the calculator module
+- `README.md` - Project documentation
 
 ## Requirements
 
 - Python 3.6 or higher
 
-## Project Structure
+## Usage
 
-```
-.
-├── main.py          # Main entry point of the application
-├── calculator.py    # Module containing arithmetic operations
-├── utils.py         # Utility functions for input validation
-└── README.md        # This file
-```
+### Running the Application
 
-## How to Run
+To run the calculator application:
 
-1. Make sure you have Python 3.6+ installed on your system:
-   ```bash
-   python --version
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd /path/to/project
-   ```
-
-3. Run the application:
-   ```bash
-   python main.py
-   ```
-
-4. Follow the prompts to enter two positive integers
-
-## Usage Example
-
-```
-$ python main.py
-Simple Calculator - Addition of Two Positive Integers
-==================================================
-Enter the first positive integer: 42
-Enter the second positive integer: 58
-
-Result: 42 + 58 = 100
+```bash
+python main.py
 ```
 
-## Input Validation
+You will be prompted to enter two integers, and the application will display their difference.
 
-The application validates that:
-- Both inputs are integers (not strings, floats, or other types)
-- Both integers are positive (greater than 0)
-- Invalid inputs will prompt the user to try again
+### Example
 
-## Module Documentation
+```
+Integer Difference Calculator
+==============================
+Enter the first integer: 15
+Enter the second integer: 7
 
-### calculator.py
+The difference between 15 and 7 is: 8
+```
 
-Contains the `add(a, b)` function that:
-- Takes two positive integers as parameters
-- Validates the inputs
-- Returns their sum
+### Using the Calculator Module
 
-### utils.py
+You can also import and use the `calculate_difference` function directly:
 
-Contains utility functions:
-- `validate_positive_integer(value, name)`: Validates that a value is a positive integer
-- `get_positive_integer_input(prompt)`: Gets validated positive integer input from the user
+```python
+from calculator import calculate_difference
 
-### main.py
+result = calculate_difference(10, 5)
+print(result)  # Output: 5
+```
 
-The main entry point that:
-- Prompts the user for two positive integers
-- Calls the add function from calculator module
-- Displays the result
+## Running Tests
 
-## Error Handling
+To run the unit tests:
 
-The application handles various error scenarios:
-- Non-numeric input
-- Negative numbers
-- Zero
-- Keyboard interrupts (Ctrl+C)
+```bash
+python test_calculator.py
+```
+
+Or using unittest discovery:
+
+```bash
+python -m unittest test_calculator.py
+```
+
+For verbose output:
+
+```bash
+python -m unittest test_calculator.py -v
+```
+
+## Features
+
+- Calculate the difference between two integers
+- Input validation and error handling
+- Comprehensive unit tests
+- Support for positive, negative, and zero values
+- Support for floating-point numbers
+
+## Function Documentation
+
+### `calculate_difference(a, b)`
+
+Calculates the difference between two numbers (a - b).
+
+**Parameters:**
+- `a` (int/float): The first number
+- `b` (int/float): The second number
+
+**Returns:**
+- (int/float): The difference between a and b
+
+**Raises:**
+- `TypeError`: If inputs are not numeric types
 
 ## License
 
-This project is provided as-is for educational purposes.
+This project is open source and available for educational purposes.

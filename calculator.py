@@ -1,24 +1,20 @@
-"""Calculator module containing arithmetic operations."""
-
-from utils import validate_positive_integer
+"""Module containing the function to calculate the difference between two integers."""
 
 
-def add(a, b):
-    """Add two positive integers together.
+def calculate_difference(a, b):
+    """Calculate the difference between two integers.
     
     Args:
-        a (int): First positive integer
-        b (int): Second positive integer
+        a (int): The first integer
+        b (int): The second integer
     
     Returns:
-        int: Sum of a and b
+        int: The difference (a - b)
     
     Raises:
-        ValueError: If either argument is not a positive integer
+        TypeError: If inputs are not integers or numeric types
     """
-    # Validate inputs
-    validate_positive_integer(a, "First argument")
-    validate_positive_integer(b, "Second argument")
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Both arguments must be numeric types")
     
-    # Return sum
-    return a + b
+    return a - b
