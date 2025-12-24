@@ -1,38 +1,32 @@
-# Hello World Program
+# Hello World
 
-A simple Python program that prints 'Hello, World!' to the console.
+A simple Hello World program written in Python.
 
 ## Description
 
-This is a basic Python script demonstrating a simple console output program.
+This project prints "Hello, World!" to the console.
 
 ## Requirements
 
-- Python 3.x
+- Python 3.6 or higher
 
 ## Installation
 
-No installation required. Just ensure you have Python 3 installed on your system.
+No installation required. Just ensure you have Python installed on your system.
 
-## How to Run
+## Usage
 
-### On Linux/Mac:
+To run the program, execute the following command in your terminal:
 
 ```bash
-python3 hello_world.py
+python main.py
 ```
 
-### On Windows:
+Or make the file executable and run it directly:
 
 ```bash
-python hello_world.py
-```
-
-### Alternative method (if script is executable):
-
-```bash
-chmod +x hello_world.py  # Make it executable (Linux/Mac only)
-./hello_world.py
+chmod +x main.py
+./main.py
 ```
 
 ## Expected Output
@@ -43,4 +37,4 @@ Hello, World!
 
 ## License
 
-This is a simple educational example and is free to use.
+This project is in the public domain.
