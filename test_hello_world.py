@@ -15,4 +15,4 @@ def test_main_prints_hello_world():
     sys.stdout = sys.__stdout__
 
     output = captured.getvalue().lower()
-    assert "hello" in output and "world" in output
+    assert "hellow" in output and "world" in output
