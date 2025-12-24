@@ -10,11 +10,5 @@ def calculate_difference(a, b):
     
     Returns:
         int: The difference (a - b)
-    
-    Raises:
-        TypeError: If inputs are not integers or numeric types
     """
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
-        raise TypeError("Both arguments must be numeric types")
-    
     return a - b

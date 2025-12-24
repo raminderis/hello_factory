@@ -1,62 +1,47 @@
 #!/usr/bin/env python3
-"""Main entry point for the positive integer addition application."""
+"""Main application file that takes two integers as input and returns their difference."""
+
+from calculator import calculate_difference
 
 
-def add_numbers(a, b):
-    """Add two positive integers.
+def diff_numbers(a, b):
+    """Calculate the difference between two numbers with type validation.
     
     Args:
-        a: First number (must be positive integer)
-        b: Second number (must be positive integer)
+        a: The first number (must be int or float)
+        b: The second number (must be int or float)
     
     Returns:
-        int: The sum of a and b
+        The difference (a - b)
     
     Raises:
-        ValueError: If inputs are not positive integers
+        ValueError: If inputs are not valid numbers
     """
-    # Check if inputs are valid integers
-    if not isinstance(a, int) or not isinstance(b, int):
-        raise ValueError("Both arguments must be integers")
+    if not isinstance(a, (int, float)) or isinstance(a, bool):
+        raise ValueError("First argument must be a number")
+    if not isinstance(b, (int, float)) or isinstance(b, bool) or b is None:
+        raise ValueError("Second argument must be a number")
     
-    # Check if inputs are positive
-    if a <= 0 or b <= 0:
-        raise ValueError("Both arguments must be positive integers")
-    
-    return a + b
-
-
-def get_positive_integer(prompt):
-    """Get a positive integer from user input.
-    
-    Args:
-        prompt (str): The prompt to display to the user
-    
-    Returns:
-        int: A positive integer entered by the user
-    """
-    while True:
-        try:
-            value = int(input(prompt))
-            if value <= 0:
-                print("Please enter a positive integer.")
-                continue
-            return value
-        except ValueError:
-            print("Invalid input. Please enter a valid integer.")
+    return a - b
 
 
 def main():
-    """Main function that takes two positive integers as input and displays their sum."""
-    print("Positive Integer Addition")
-    print("=" * 30)
+    """Main function to get user input and display the difference."""
+    try:
+        num1 = int(input("Enter the first integer: "))
+        num2 = int(input("Enter the second integer: "))
+        
+        result = diff_numbers(num1, num2)
+        
+        print(f"{num1} - {num2} = {result}")
     
-    num1 = get_positive_integer("Enter the first positive integer: ")
-    num2 = get_positive_integer("Enter the second positive integer: ")
-    
-    result = add_numbers(num1, num2)
-    
-    print(f"\n{num1} + {num2} = {result}")
+    except ValueError as e:
+        if "invalid literal" in str(e):
+            print("Error: Please enter valid integers.")
+        else:
+            raise
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 
 if __name__ == "__main__":

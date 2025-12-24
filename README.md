@@ -2,94 +2,62 @@
 
 A simple Python application that calculates the difference between two integers.
 
+## Description
+
+This project consists of a main application that prompts the user for two integers and displays their difference. The calculation logic is separated into a dedicated calculator module for better code organization and reusability.
+
 ## Project Structure
 
-- `main.py` - Main entry point that takes two integers as input and displays the difference
-- `calculator.py` - Module containing the function to calculate the difference between two integers
-- `test_calculator.py` - Unit tests for the calculator module
-- `README.md` - Project documentation
+- `main.py` - Main application file that handles user input and output
+- `calculator.py` - Module containing the difference calculation function
+- `README.md` - This documentation file
 
 ## Requirements
 
-- Python 3.6 or higher
+- Python 3.x
 
 ## Usage
 
-### Running the Application
-
-To run the calculator application:
+Run the main application:
 
 ```bash
 python main.py
 ```
 
-You will be prompted to enter two integers, and the application will display their difference.
+Or make it executable and run directly:
 
-### Example
-
-```
-Integer Difference Calculator
-==============================
-Enter the first integer: 15
-Enter the second integer: 7
-
-The difference between 15 and 7 is: 8
+```bash
+chmod +x main.py
+./main.py
 ```
 
-### Using the Calculator Module
+The application will prompt you to enter two integers and will display their difference.
 
-You can also import and use the `calculate_difference` function directly:
+## Example
+
+```
+Enter the first integer: 10
+Enter the second integer: 3
+The difference between 10 and 3 is: 7
+```
+
+## Using the Calculator Module
+
+You can also import and use the calculator module in your own Python code:
 
 ```python
 from calculator import calculate_difference
 
-result = calculate_difference(10, 5)
-print(result)  # Output: 5
-```
-
-## Running Tests
-
-To run the unit tests:
-
-```bash
-python test_calculator.py
-```
-
-Or using unittest discovery:
-
-```bash
-python -m unittest test_calculator.py
-```
-
-For verbose output:
-
-```bash
-python -m unittest test_calculator.py -v
+result = calculate_difference(10, 3)
+print(result)  # Output: 7
 ```
 
 ## Features
 
-- Calculate the difference between two integers
+- Simple and intuitive command-line interface
 - Input validation and error handling
-- Comprehensive unit tests
-- Support for positive, negative, and zero values
-- Support for floating-point numbers
-
-## Function Documentation
-
-### `calculate_difference(a, b)`
-
-Calculates the difference between two numbers (a - b).
-
-**Parameters:**
-- `a` (int/float): The first number
-- `b` (int/float): The second number
-
-**Returns:**
-- (int/float): The difference between a and b
-
-**Raises:**
-- `TypeError`: If inputs are not numeric types
+- Modular design for easy maintenance and testing
+- Clear documentation and usage instructions
 
 ## License
 
