@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Main application file that takes two integers as input and returns their difference."""
+"""Main entry point for the calculator application."""
 
-from calculator import calculate_difference
+from calculator import subtract
 
 
 def diff_numbers(a, b):
-    """Calculate the difference between two numbers with type validation.
+    """Calculate the difference between two numbers.
     
     Args:
-        a: The first number (must be int or float)
-        b: The second number (must be int or float)
+        a: The first number (minuend)
+        b: The second number (subtrahend)
     
     Returns:
         The difference (a - b)
@@ -21,12 +21,14 @@ def diff_numbers(a, b):
         raise ValueError("First argument must be a number")
     if not isinstance(b, (int, float)) or isinstance(b, bool) or b is None:
         raise ValueError("Second argument must be a number")
+    if a is None:
+        raise ValueError("First argument must be a number")
     
     return a - b
 
 
 def main():
-    """Main function to get user input and display the difference."""
+    """Main function to take two integers as input and calculate their difference."""
     try:
         num1 = int(input("Enter the first integer: "))
         num2 = int(input("Enter the second integer: "))
@@ -34,7 +36,6 @@ def main():
         result = diff_numbers(num1, num2)
         
         print(f"{num1} - {num2} = {result}")
-    
     except ValueError as e:
         if "invalid literal" in str(e):
             print("Error: Please enter valid integers.")

@@ -1,64 +1,85 @@
-# Integer Difference Calculator
+# Calculator Application
 
 A simple Python application that calculates the difference between two integers.
 
-## Description
+## Features
 
-This project consists of a main application that prompts the user for two integers and displays their difference. The calculation logic is separated into a dedicated calculator module for better code organization and reusability.
+- Takes two integers as input from the user
+- Computes the difference (first number - second number)
+- Includes error handling for invalid inputs
+- Comprehensive unit tests
 
 ## Project Structure
 
-- `main.py` - Main application file that handles user input and output
-- `calculator.py` - Module containing the difference calculation function
-- `README.md` - This documentation file
+```
+.
+├── main.py              # Main entry point
+├── calculator.py        # Calculator module with subtract function
+├── test_calculator.py   # Unit tests
+└── README.md           # This file
+```
 
-## Requirements
+## Installation
 
-- Python 3.x
+No external dependencies are required. This application uses only Python standard library.
 
 ## Usage
 
-Run the main application:
+### Running the Application
 
 ```bash
 python main.py
 ```
 
-Or make it executable and run directly:
-
-```bash
-chmod +x main.py
-./main.py
-```
-
-The application will prompt you to enter two integers and will display their difference.
-
-## Example
+You will be prompted to enter two integers:
 
 ```
 Enter the first integer: 10
-Enter the second integer: 3
-The difference between 10 and 3 is: 7
+Enter the second integer: 5
+The difference between 10 and 5 is: 5
 ```
 
-## Using the Calculator Module
+### Running Tests
 
-You can also import and use the calculator module in your own Python code:
+To run the unit tests:
 
+```bash
+python test_calculator.py
+```
+
+Or using unittest discovery:
+
+```bash
+python -m unittest test_calculator.py
+```
+
+## Module Documentation
+
+### calculator.py
+
+#### `subtract(a, b)`
+
+Computes the difference between two integers.
+
+**Parameters:**
+- `a` (int): The first integer (minuend)
+- `b` (int): The second integer (subtrahend)
+
+**Returns:**
+- `int`: The difference (a - b)
+
+**Example:**
 ```python
-from calculator import calculate_difference
+from calculator import subtract
 
-result = calculate_difference(10, 3)
+result = subtract(10, 3)
 print(result)  # Output: 7
 ```
 
-## Features
+## Requirements
 
-- Simple and intuitive command-line interface
-- Input validation and error handling
-- Modular design for easy maintenance and testing
-- Clear documentation and usage instructions
+- Python 3.6 or higher
 
 ## License
 
-This project is open source and available for educational purposes.
+This project is provided as-is for educational purposes.
